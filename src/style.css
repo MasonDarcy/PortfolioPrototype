@@ -1,0 +1,231 @@
+:root {
+  --nodeRadius: 4vmin;
+  font-family: "Open Sans", sans-serif;
+  --color1: #2d4263;
+  --color2: #191919;
+  --color3: #c84b31;
+  --color4: #ecdbba;
+  background-color: var(--color2);
+  --navBarHeight: 10vmin;
+  --navBarWidth: 100vw;
+  --x-rotation: -5;
+  --y-rotation: -5;
+  --height: 10vmin;
+  --width: 10vmin;
+  --depth: 10vmin;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameSplashParent {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+}
+
+.mainTitle {
+  font-size: 10vmin;
+  color: var(--color4);
+  opacity: 0;
+}
+
+.mLetter {
+  transform: translateY(10vmin) translateX(-9vmin);
+  width: 10vmin;
+  height: 10vmin;
+  color: lightblue;
+}
+
+.line {
+  /* border-bottom: 1vmin solid lightblue; */
+  width: 60vmin;
+  height: 1vmin;
+  transform: translateY(1vmin);
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(105, 101, 101, 1) 0%,
+    rgba(163, 245, 255, 1) 100%
+  );
+}
+
+.apostraphe {
+  position: absolute;
+  font-size: 10vmin;
+  color: var(--color3);
+  opacity: 0;
+}
+
+.apostrapheBox {
+  font-size: 10vmin;
+  position: absolute;
+  opacity: 1;
+  transform: translateY(31vmin);
+}
+
+.subTitle {
+  font-size: 5vmin;
+  color: var(--color4);
+  opacity: 0;
+}
+
+@media screen and (max-width: 20em) {
+  .doodad {
+    color: white;
+    width: 10vmin;
+    height: 10vmin;
+    background-color: green;
+  }
+}
+
+@media screen and (min-width: 20em) {
+  .doodad {
+    color: rgb(255, 255, 255);
+    width: 10vmin;
+    height: 10vmin;
+    background-color: rgb(50, 51, 117);
+  }
+}
+
+/*Skill stack--------------------------------------------*/
+.camera {
+  position: absolute;
+  transform-style: preserve-3d;
+  height: calc(var(--height) * 10);
+  width: calc(var(--width) * 10);
+  transform: rotateX(calc(var(--x-rotation, -25) * 1deg))
+    rotateY(calc(var(--y-rotation, -25) * 1deg)) rotateX(90deg);
+}
+
+.horizontalParent {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translateX(-300vmin);
+  /* height: 100px;
+  width: 100px;
+  background-color: blue; */
+}
+
+.verticalParent {
+  position: absolute;
+  transform-style: preserve-3d;
+  /* height: 100px;
+  width: 100px;
+  background-color: blue; */
+}
+
+.cubeParent {
+  position: absolute;
+  /* background-color: royalblue; */
+  transform-style: preserve-3d;
+  height: calc(var(--height));
+  width: calc(var(--width));
+}
+
+.cubeParent > div {
+  position: absolute;
+  height: var(--height);
+  width: var(--width);
+  color: white;
+  opacity: 0.5;
+}
+.front {
+  background-color: var(--color1);
+  transform: rotateX(-90deg) translateZ(calc(var(--depth) / 2 * 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vmin;
+}
+
+.back {
+  background-color: rgb(77, 158, 195);
+  transform: rotateX(90deg) translateZ(calc(var(--depth) / 2 * 1));
+}
+
+.right {
+  background-color: var(--color3);
+  transform: rotateX(90deg) rotateY(90deg)
+    translateZ(calc(var(--depth) / 2 * 1));
+}
+
+.left {
+  background-color: var(--color4);
+
+  transform: rotateX(90deg) rotateY(90deg)
+    translateZ(calc(var(--depth) / 2 * -1));
+}
+
+.top {
+  background-color: lightblue;
+
+  transform: translateZ(calc(var(--depth) / 2 * 1));
+}
+
+.bottom {
+  background-color: rgb(35, 195, 69);
+  transform: translateZ(calc(var(--depth) / 2 * -1));
+}
+
+/*-------------------------------------------------*/
+
+/*Navbar */
+.navBar {
+  position: sticky;
+  height: var(--navBarHeight);
+  width: var(--navBarWidth);
+  background-color: var(--color1);
+}
+
+/*Prototype-----------------------------------------------------*/
+.parent {
+  position: absolute;
+}
+
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.parent2 {
+  position: absolute;
+  transform: translateX(34vmin);
+}
+
+.edge {
+  position: absolute;
+  border-bottom: 1px solid lightblue;
+  opacity: 0;
+  width: 0%;
+  transform: translateY(var(--nodeRadius));
+}
+/* box-shadow: 0px 0px 0px 2px rgba(198, 113, 224, 0.3); */
+.node {
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+  border: solid 1px;
+  border-color: lightblue;
+  transform: translateX(25vmin);
+  width: calc(var(--nodeRadius) * 2);
+  height: calc(var(--nodeRadius) * 2);
+  opacity: 0;
+  font-size: 1.5vmin;
+  justify-content: center;
+  align-items: center;
+}
